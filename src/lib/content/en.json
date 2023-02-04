@@ -1,0 +1,29 @@
+{
+  "title": "Kioskberry",
+  "description": "We are building a dedicated e-commerce platform for local food producers, for producers by producers.",
+  "close": "Close",
+  "locale": { "label": "Fr", "href": "https://kioskberry.com" },
+  "support": {
+    "title": "Show your support",
+    "email": "your.email@address.com",
+    "consent": "consent to receive our newsletter:",
+    "consent_interval": {
+      "never": "Never",
+      "week": "~ Once a week",
+      "month": "~ Once a month"
+    },
+    "interval": {
+      "one_time": "One-time",
+      "monthly": "Monthly",
+      "yearly": "Yearly"
+    },
+    "cta": "Proceed to payment information"
+  },
+  "success": {
+    "title": "Thank you for your support!",
+    "number": "Here's your reference number",
+    "receipt": "and a receipt was sent to"
+  },
+  "copyright": "© Kioskberry",
+  "back": "Back"
+}
