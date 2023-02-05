@@ -15,8 +15,22 @@
 		align-items: center;
 		padding: var(--step-0);
 
+		h1 {
+			margin-bottom: 0;
+		}
+
 		a {
 			font-size: var(--step-1);
+		}
+
+		@media (max-width: 799px) {
+			h1 {
+				font-size: var(--step-1);
+			}
+
+			a {
+				font-size: var(--step-0);
+			}
 		}
 	}
 </style>

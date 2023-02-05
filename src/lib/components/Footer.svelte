@@ -8,11 +8,17 @@
 	<a href="mailto:{$content.contact.email}"><u>{$content.contact.title}</u></a>
 </footer>
 
-<style>
+<style lang="scss">
 	footer {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
     padding: var(--step-0);
+		row-gap: var(--step--1);
+
+		@media (max-width: 799px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
 	}
 </style>
