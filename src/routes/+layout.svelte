@@ -1,15 +1,10 @@
-<script lang="ts" context="module">
-	import { writable } from 'svelte/store'
-	import type { LayoutData } from './$types'
-
-	export const content = writable<LayoutData["content"]>(undefined)
-</script>
-
 <script lang="ts">
 	import './styles.scss'
 
 	import Footer from '$lib/components/Footer.svelte'
 	import Header from '$lib/components/Header.svelte'
+	import type { LayoutData } from './$types'
+  import { content } from '$lib/stores'
 
   export let data: LayoutData
 

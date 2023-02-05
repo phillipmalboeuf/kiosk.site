@@ -2,7 +2,7 @@
   "title": "Kioskberry",
   "description": "Nous bâtissons une plateforme e-commerce dédiée aux besoins des producteurs de bouffe locaux, par des producteurs pour des producteurs.",
   "close": "Fermer",
-  "locale": { "label": "En", "href": "https://en.kioskberry.com" },
+  "locale": { "label": "English", "href": "https://en.kioskberry.com" },
   "support": {
     "title": "Soutenir nos efforts",
     "email": "votre.courriel@adresse.com",
@@ -18,6 +18,10 @@
       "yearly": "Annuellement"
     },
     "cta": "Procédez au paiement"
+  },
+  "contact": {
+    "title": "Nous écrire",
+    "email": "phil@kioskberry.com"
   },
   "success": {
     "title": "Merci pour votre soutien!",

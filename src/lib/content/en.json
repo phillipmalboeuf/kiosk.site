@@ -2,7 +2,7 @@
   "title": "Kioskberry",
   "description": "We are building a dedicated e-commerce platform for local food producers, for producers by producers.",
   "close": "Close",
-  "locale": { "label": "Fr", "href": "https://kioskberry.com" },
+  "locale": { "label": "French", "href": "https://kioskberry.com" },
   "support": {
     "title": "Show your support",
     "email": "your.email@address.com",
@@ -18,6 +18,10 @@
       "yearly": "Yearly"
     },
     "cta": "Proceed to payment information"
+  },
+  "contact": {
+    "title": "Contact us",
+    "email": "phil@kioskberry.com"
   },
   "success": {
     "title": "Thank you for your support!",
