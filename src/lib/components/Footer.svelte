@@ -55,7 +55,7 @@
 
 			<div class="flex flex--middle flex--tight">
 				<label for="email" aria-label="Email address"><Icon k="at" /></label>
-				<input type="email" name="email" id="email" value="phil+4@phils.computer" placeholder={$content.support.email} required>
+				<input type="email" name="email" id="email" placeholder={$content.support.email} required>
 			</div>
 
 			<div>{$content.support.consent}</div>
