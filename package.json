@@ -2,6 +2,7 @@
 	"name": "kiosk.site",
 	"version": "0.0.1",
 	"scripts": {
+		"start": "PORT=5000 node build/index.js",
 		"dev": "vite dev --open",
 		"build": "vite build",
 		"preview": "vite preview",
@@ -10,9 +11,9 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@fontsource/fira-mono": "^4.5.10",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^1.0.0",
+		"@sveltejs/adapter-node": "^1.1.6",
 		"@sveltejs/kit": "^1.0.0",
 		"@types/cookie": "^0.5.1",
 		"luxon": "^3.2.1",
