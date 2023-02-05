@@ -412,6 +412,26 @@ export interface Notice {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "signups".
+ */
+export interface Signup {
+  id: string;
+  email: string;
+  name?: string;
+  phone?: string;
+  shipping_address?: string;
+  kiosk?: string | Kiosk;
+  accepts_notices?: 'never' | 'week' | 'month';
+  notes?: {
+    [k: string]: unknown;
+  }[];
+  producer?: string | Producer;
+  logged_at?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "history_tasks".
  */
 export interface HistoryTask {

@@ -17,13 +17,14 @@
       "monthly": "Monthly",
       "yearly": "Yearly"
     },
-    "cta": "Proceed to payment information"
+    "cta": "Proceed to sign up"
   },
   "contact": {
     "title": "Contact us",
     "email": "phil@kioskberry.com"
   },
   "success": {
+    "waiting": "One moment...",
     "title": "Thank you for your support!",
     "number": "Here's your reference number",
     "receipt": "and a receipt was sent to"

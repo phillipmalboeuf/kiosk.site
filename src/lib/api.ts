@@ -2,11 +2,12 @@ import { error } from '@sveltejs/kit'
 import { PUBLIC_API_URL } from '$env/static/public'
 import { PAYLOAD_TOKEN } from '$env/static/private'
 
-export async function payload<T>(path: string, options?: object) {
+export async function payload<T>(path: string, options?: RequestInit) {
   const data = await (await fetch(`${PUBLIC_API_URL}${path}`, {
     ...options,
     headers: {
-      Authorization: `producers API-Key ${PAYLOAD_TOKEN}`,
+      'Authorization': `producers API-Key ${PAYLOAD_TOKEN}`,
+      'Content-Type': 'application/json'
     }
   })).json()
 

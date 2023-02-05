@@ -17,13 +17,14 @@
       "monthly": "Mensuellement",
       "yearly": "Annuellement"
     },
-    "cta": "Procédez au paiement"
+    "cta": "Procédez à l'inscription"
   },
   "contact": {
     "title": "Nous écrire",
     "email": "phil@kioskberry.com"
   },
   "success": {
+    "waiting": "Un instant...",
     "title": "Merci pour votre soutien!",
     "number": "Votre numéro de référence est le",
     "receipt": "et une facture a été acheminée au"
