@@ -10,7 +10,7 @@ export const load: PageServerLoad = async ({ locals, url, params }) => {
 
   return {
     page
-  }  
+  }
 }
 
 export const actions: Actions = {

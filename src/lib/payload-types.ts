@@ -12,6 +12,7 @@ export interface Config {}
  */
 export interface Season {
   name?: string;
+  identifier: string;
   id: string;
   start_date: string;
   end_date: string;
@@ -26,8 +27,8 @@ export interface Season {
  * via the `definition` "producers".
  */
 export interface Producer {
-  id: string;
   name?: string;
+  id: string;
   admin?: boolean;
   payment_provider_id?: string;
   website?: string;
@@ -51,6 +52,7 @@ export interface Producer {
  */
 export interface Product {
   title?: string;
+  identifier: string;
   id: string;
   price: number;
   inventory?: number;
@@ -101,8 +103,9 @@ export interface Upload {
  * via the `definition` "bundles".
  */
 export interface Bundle {
-  title?: string;
   id: string;
+  title?: string;
+  identifier: string;
   adjustment?: number;
   products: {
     product: string | Product;
@@ -130,8 +133,9 @@ export interface Bundle {
  * via the `definition` "collections".
  */
 export interface Collection {
-  title?: string;
+  title: string;
   id: string;
+  identifier: string;
   products?:
     | (
         | {
@@ -153,7 +157,6 @@ export interface Collection {
             relationTo: 'bundles';
           }
       )[];
-  seasons?: string[] | Season[];
   thumbnail?: string | Upload;
   description?: {
     [k: string]: unknown;
@@ -197,6 +200,7 @@ export interface Customer {
  */
 export interface Kiosk {
   name?: string;
+  identifier: string;
   id: string;
   address?: string;
   open_hours: {
@@ -220,12 +224,14 @@ export interface Perk {
   title?: string;
   id: string;
   description?: string;
-  all_customers?: boolean;
-  type?: 'subscription' | 'order_units' | 'code';
+  type?: 'subscription' | 'order_units' | 'code' | 'collections' | 'seasons';
+  code?: string;
   unit: {
     unit?: string;
     unit_number?: number;
   };
+  collections?: string[] | Collection[];
+  seasons?: string[] | Season[];
   discount: {
     amount?: number;
     percentage?: boolean;
@@ -245,7 +251,6 @@ export interface Perk {
 export interface Order {
   id: string;
   payment_provider_id?: string;
-  season?: string | Season;
   placed_by?:
     | {
         value: string | Customer;
@@ -298,15 +303,16 @@ export interface Subscription {
   shipping_address?: string;
   line_items: {
     description?: string;
-    product?: string | Product;
-    size?: number;
-    quantity?: number;
+    product: string | Product;
+    size: number;
+    quantity: number;
+    price?: number;
     id?: string;
   }[];
   schedule: {
     start_date: string;
     end_date?: string;
-    interval: 'week' | 'month' | 'year';
+    interval: 'week' | 'month' | 'year' | 'day';
     interval_count: number;
   };
   next_deliver_at?: string;
@@ -324,18 +330,20 @@ export interface Subscription {
  * via the `definition` "content_pages".
  */
 export interface ContentPage {
-  title?: string;
   id: string;
+  title?: string;
+  identifier: string;
   index?: boolean;
   seasons?: string[] | Season[];
   content: (
     | {
         title?: string;
-        id?: string;
+        identifier?: string;
         media?: string | Upload;
         text?: {
           [k: string]: unknown;
         }[];
+        id?: string;
         blockName?: string;
         blockType: 'Text';
       }
@@ -358,16 +366,17 @@ export interface ContentPage {
       }
     | {
         title?: string;
-        id?: string;
+        identifier?: string;
         number: number;
         columns: (
           | {
               title?: string;
-              id?: string;
+              identifier?: string;
               media?: string | Upload;
               text?: {
                 [k: string]: unknown;
               }[];
+              id?: string;
               blockName?: string;
               blockType: 'Text';
             }
@@ -379,8 +388,25 @@ export interface ContentPage {
               blockType: 'Button';
             }
         )[];
+        id?: string;
         blockName?: string;
         blockType: 'Blocks';
+      }
+    | {
+        title?: string;
+        identifier?: string;
+        collections?: string[] | Collection[];
+        id?: string;
+        blockName?: string;
+        blockType: 'CollectionsList';
+      }
+    | {
+        title?: string;
+        identifier?: string;
+        products?: string[] | Product[];
+        id?: string;
+        blockName?: string;
+        blockType: 'ProductsList';
       }
   )[];
   producer?: string | Producer;
@@ -394,8 +420,9 @@ export interface ContentPage {
  * via the `definition` "notices".
  */
 export interface Notice {
-  title?: string;
   id: string;
+  title?: string;
+  identifier: string;
   event?: 'create-customers' | 'create-orders' | 'create-subscriptions' | 'update-orders-status-fulfilled' | 'date';
   date?: string;
   accepts_notices_customers?: 'week' | 'month';
@@ -439,6 +466,7 @@ export interface HistoryTask {
   description?: string;
   task: string;
   count?: number;
+  price?: number;
   product?: string | Product;
   date: string;
   season?: string | Season;
