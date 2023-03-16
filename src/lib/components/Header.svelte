@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
   import { content } from '../stores';
   import Menu from './Menu.svelte';
+  import OrderBar from './OrderBar.svelte';
 
 	export let menu = false
 </script>
@@ -21,7 +22,7 @@
 	<nav>
 		{#if menu}
 		<a href={$content.locale.href}>Profile</a>
-		<button>Panier</button>
+		<OrderBar />
 		{/if}
 		{#if !menu}<a href={$content.locale.href}>{menu ? $content.locale.label.substring(0, 2) : $content.locale.label}</a>{/if}
 	</nav>

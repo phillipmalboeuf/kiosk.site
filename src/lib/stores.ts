@@ -1,5 +1,4 @@
 import { browser } from '$app/environment'
-import { PUBLIC_API_URL } from '$env/static/public'
 import { writable, readable } from 'svelte/store'
 import type { LayoutData } from '../routes/$types'
 import type { Customer, Kiosk, Perk } from './payload-types'
@@ -33,7 +32,7 @@ export let kiosk = writable<Kiosk>()
 export let perk = writable<string>(browser && params.get('perk'))
 
 export let perks = readable<Perk[]>(undefined, set => {
-  fetch(`${PUBLIC_API_URL}/perks?depth=0`).then(async response => {
+  fetch(`/ex/api/perks?depth=0`).then(async response => {
     set((await response.json()).docs)
   })
 
