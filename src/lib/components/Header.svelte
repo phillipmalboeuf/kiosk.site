@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
   import { content } from '../stores';
+  import Menu from './Menu.svelte';
 
 	export let menu = false
 </script>
@@ -8,7 +9,7 @@
 <header class:menu>
 	{#if menu}
 	<nav>
-		<button>Menu</button>
+		<Menu />
 	</nav>
 	<a href="/ex">
 		<h1>{$content.title}</h1>

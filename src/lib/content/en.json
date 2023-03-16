@@ -3,6 +3,11 @@
   "description": "We are building a dedicated e-commerce platform for local food producers, for producers by producers.",
   "close": "Close",
   "locale": { "label": "French", "href": "https://kioskberry.com" },
+  "links": [
+    { "label": "Intro", "href": "/ex" },
+    { "label": "Collections", "href": "/ex/collections" },
+    { "label": "Contact", "href": "mailto:phil@kioskberry.com" }
+  ],
   "support": {
     "title": "Show your support",
     "email": "your.email@address.com",
