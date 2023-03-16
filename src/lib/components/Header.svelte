@@ -10,8 +10,13 @@
 	<nav>
 		<button>Menu</button>
 	</nav>
-	{/if}
+	<a href="/ex">
+		<h1>{$content.title}</h1>
+	</a>
+	{:else}
 	<h1>{$content.title}</h1>
+	{/if}
+	
 	<nav>
 		{#if menu}
 		<a href={$content.locale.href}>Profile</a>
